@@ -2,79 +2,92 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>自己紹介(chatgpt)</title>
+  <title>自己紹介</title>
   <style>
+    /* ベーススタイル */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      margin: 0;
-      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-      background-color: #f5f7fa;
+      font-family: "Helvetica Neue", "Yu Gothic", sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fbe9e7);
       color: #333;
-    }
-
-    header {
-      background-color: #4a90e2;
-      color: white;
+      line-height: 1.6;
       padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #4a4a4a;
       text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.8em;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 2em;
-      color: #4a90e2;
+      font-size: 1.8em;
+      color: #00796b;
+      margin-top: 30px;
       margin-bottom: 10px;
+      border-left: 6px solid #00796b;
+      padding-left: 10px;
     }
 
     p {
       font-size: 1.1em;
-      line-height: 1.6;
       margin-bottom: 20px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #e64a19;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      margin-top: 40px;
       font-size: 0.9em;
-      color: #999;
+      color: #777;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <div class="container">
     <h1>自己紹介</h1>
-  </header>
 
-  <main>
     <h2>ようこそ</h2>
+    <p><span class="highlight">名前：</span>鳥羽慧寛</p>
 
-    <p><strong>名前：</strong>鳥羽慧寛</p>
-
-    <p><strong>経歴：</strong><br>
-      日本大学鶴ヶ丘高校 → 日本大学理工学部電子工学科 →<br>
-      日本大学大学院理工学研究科電子工学専攻
+    <h2>経歴</h2>
+    <p>
+      日本大学鶴ヶ丘高校<br>
+      ⇒ 日本大学理工学部電子工学科<br>
+      ⇒ 日本大学大学院理工学研究科電子工学専攻
     </p>
 
-    <p><strong>趣味：</strong><br>
-      麻雀、旅行
-    </p>
-  </main>
+    <h2>趣味</h2>
+    <p>麻雀、旅行</p>
+  </div>
 
   <footer>
-    &copy; 2025 鳥羽慧寛
+    &copy; 2025 鳥羽慧寛 — All rights reserved.
   </footer>
 
 </body>
