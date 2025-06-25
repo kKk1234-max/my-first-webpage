@@ -4,66 +4,91 @@
   <meta charset="UTF-8">
   <title>自己紹介</title>
   <style>
-    /* ベーススタイル */
+    /* ベース設定 */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: "Helvetica Neue", "Yu Gothic", sans-serif;
-      background: linear-gradient(135deg, #e0f7fa, #fbe9e7);
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #e0f7fa);
+      color: #1a237e;
       padding: 40px 20px;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
       padding: 40px;
-      transition: transform 0.3s ease;
+      animation: fadeIn 1.2s ease-in-out;
     }
 
-    .container:hover {
-      transform: translateY(-5px);
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
-      font-size: 2.5em;
-      color: #4a4a4a;
+      font-size: 2.8em;
       text-align: center;
       margin-bottom: 10px;
+      color: #0d47a1;
+      letter-spacing: 2px;
     }
 
     h2 {
-      font-size: 1.8em;
-      color: #00796b;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      border-left: 6px solid #00796b;
+      font-size: 2em;
+      margin: 30px 0 10px;
+      border-left: 6px solid #1976d2;
       padding-left: 10px;
+      color: #1565c0;
     }
 
     p {
       font-size: 1.1em;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      line-height: 1.8;
     }
 
-    .highlight {
-      font-weight: bold;
-      color: #e64a19;
+    .section {
+      animation: slideIn 0.8s ease forwards;
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    .section:nth-child(odd) {
+      animation-delay: 0.3s;
+    }
+
+    .section:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     footer {
       text-align: center;
       margin-top: 40px;
       font-size: 0.9em;
-      color: #777;
+      color: #666;
+    }
+
+    /* 装飾用の線 */
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 30px 0;
     }
   </style>
 </head>
@@ -72,18 +97,39 @@
   <div class="container">
     <h1>自己紹介</h1>
 
-    <h2>ようこそ</h2>
-    <p><span class="highlight">名前：</span>鳥羽慧寛</p>
+    <div class="section">
+      <h2>ようこそ</h2>
+      <p><strong>名前：</strong>鳥羽慧寛</p>
+    </div>
 
-    <h2>経歴</h2>
-    <p>
-      日本大学鶴ヶ丘高校<br>
-      ⇒ 日本大学理工学部電子工学科<br>
-      ⇒ 日本大学大学院理工学研究科電子工学専攻
-    </p>
+    <div class="section">
+      <h2>経歴</h2>
+      <p>
+        日本大学鶴ヶ丘高校<br>
+        ⇒ 日本大学理工学部電子工学科<br>
+        ⇒ 日本大学大学院理工学研究科電子工学専攻
+      </p>
+    </div>
 
-    <h2>趣味</h2>
-    <p>麻雀、旅行</p>
+    <div class="section">
+      <h2>所属</h2>
+      <p>今池研究室</p>
+    </div>
+
+    <div class="section">
+      <h2>研究内容</h2>
+      <p>発振器の位相雑音計測</p>
+    </div>
+
+    <div class="section">
+      <h2>趣味</h2>
+      <p>麻雀、旅行</p>
+    </div>
+
+    <div class="section">
+      <h2>学会発表</h2>
+      <p>電気学会</p>
+    </div>
   </div>
 
   <footer>
