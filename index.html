@@ -1,153 +1,140 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>私の最初のホームページ</title>
-    <style>
-        /* ここにCSSを記述します */
-        body {
-            background-color: #e0f7fa; /* 背景色を薄い青色に設定 */
-            color: #333333;          /* 文字色を濃い灰色に設定 */
-            font-family: sans-serif;  /* フォントを見やすく */
-            padding: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>自己紹介</title>
+  <style>
+    /* ベース設定 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #e0f7fa);
+      color: #1a237e;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.8em;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #0d47a1;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin: 30px 0 10px;
+      border-left: 6px solid #1976d2;
+      padding-left: 10px;
+      color: #1565c0;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    .section {
+      animation: slideIn 0.8s ease forwards;
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    .section:nth-child(odd) {
+      animation-delay: 0.3s;
+    }
+
+    .section:nth-child(even) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    /* 装飾用の線 */
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 30px 0;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>ようこそ!</h1>
+  <div class="container">
+    <h1>自己紹介</h1>
 
-    <p><strong>私の名前:</strong> 鳥羽慧寛</p>
-    <p><strong>学部学科:</strong> 理工学研究科電子工学専攻</p>
-    <p><strong>趣味:</strong> 麻雀、旅行</p>
-
-    <!-- ============================================= -->
-    <!-- ここからが追加したコメント機能のコードです -->
-    <!-- ============================================= -->
-
-    <div class="comment-section">
-        <h2>コメント欄</h2>
-        
-        <!-- コメント投稿フォーム -->
-        <form id="comment-form">
-            <div>
-                <label for="name-input">お名前:</label>
-                <input type="text" id="name-input" required>
-            </div>
-            <div>
-                <label for="comment-input">コメント:</label>
-                <textarea id="comment-input" rows="4" required></textarea>
-            </div>
-            <button type="submit">コメントを送信</button>
-        </form>
-        
-        <!-- コメントが表示されるエリア -->
-        <div id="comment-list">
-            <h3>みんなのコメント</h3>
-            <!-- ここにJavaScriptでコメントが追加されます -->
-        </div>
+    <div class="section">
+      <h2>ようこそ</h2>
+      <p><strong>名前：</strong>鳥羽慧寛</p>
     </div>
 
-    <style>
-        /* コメントセクションのスタイル */
-        .comment-section {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #ffffff; /* 背景を白にして見やすく */
-            border-radius: 8px; /* 角を丸くする */
-            max-width: 600px;   /* 横幅が広がりすぎないように */
-            margin-left: auto;
-            margin-right: auto;
-        }
+    <div class="section">
+      <h2>経歴</h2>
+      <p>
+        日本大学鶴ヶ丘高校<br>
+        ⇒ 日本大学理工学部電子工学科<br>
+        ⇒ 日本大学大学院理工学研究科電子工学専攻
+      </p>
+    </div>
 
-        /* フォームのスタイル */
-        #comment-form div {
-            margin-bottom: 15px;
-        }
-        #comment-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        #comment-form input,
-        #comment-form textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* paddingを含めてwidth 100%にする */
-        }
-        #comment-form button {
-            background-color: #0288d1;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #comment-form button:hover {
-            background-color: #0277bd;
-        }
+    <div class="section">
+      <h2>所属</h2>
+      <p>今池研究室</p>
+    </div>
 
-        /* コメント表示エリアのスタイル */
-        #comment-list {
-            margin-top: 30px;
-        }
-        .comment {
-            border-bottom: 1px solid #eee;
-            padding: 10px 0;
-            margin-bottom: 10px;
-        }
-        .comment-name {
-            font-weight: bold;
-            color: #007bff;
-        }
-        .comment-body {
-            margin-top: 5px;
-        }
-    </style>
+    <div class="section">
+      <h2>研究内容</h2>
+      <p>発振器の位相雑音計測</p>
+    </div>
 
-    <script>
-        // フォームが送信されたときの処理
-        document.getElementById('comment-form').addEventListener('submit', function(event) {
-            // フォームのデフォルトの送信動作（ページ再読み込み）を防ぐ
-            event.preventDefault();
+    <div class="section">
+      <h2>趣味</h2>
+      <p>麻雀、旅行</p>
+    </div>
 
-            // 入力された値を取得
-            const nameInput = document.getElementById('name-input');
-            const commentInput = document.getElementById('comment-input');
-            
-            const name = nameInput.value;
-            const commentText = commentInput.value;
+    <div class="section">
+      <h2>学会発表</h2>
+      <p>電気学会</p>
+    </div>
+  </div>
 
-            // 名前とコメントが入力されている場合のみ処理
-            if (name && commentText) {
-                // 新しいコメント要素を作成
-                const newComment = document.createElement('div');
-                newComment.classList.add('comment');
-                
-                // HTMLを安全に設定
-                const nameElement = document.createElement('p');
-                nameElement.className = 'comment-name';
-                nameElement.textContent = name;
-
-                const bodyElement = document.createElement('p');
-                bodyElement.className = 'comment-body';
-                bodyElement.textContent = commentText;
-
-                newComment.appendChild(nameElement);
-                newComment.appendChild(bodyElement);
-
-                // コメントリストの先頭に追加
-                const commentList = document.getElementById('comment-list');
-                commentList.insertBefore(newComment, commentList.children[1]);
-
-                // 入力フォームをクリア
-                nameInput.value = '';
-                commentInput.value = '';
-            }
-        });
-    </script>
+  <footer>
+    &copy; 2025 鳥羽慧寛 — All rights reserved.
+  </footer>
 
 </body>
 </html>
